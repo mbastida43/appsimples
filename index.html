@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecione uma cor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .button {
+            margin: 10px;
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .red { background-color: red; color: white; }
+        .green { background-color: green; color: white; }
+        .blue { background-color: blue; color: white; }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selecione uma cor</h1>
+    <button class="button red" onclick="showColor('Red')">Red</button>
+    <button class="button green" onclick="showColor('Green')">Green</button>
+    <button class="button blue" onclick="showColor('Blue')">Blue</button>
+    <h2 id="colorOutput">Escolha uma cor clicando nos botões acima.</h2>
+
+    <script>
+        function showColor(color) {
+            // Exibir o nome da cor escolhida no elemento com o id "colorOutput"
+            document.getElementById('colorOutput').innerText = 'Você escolheu a cor: ' + color;
+        }
+    </script>
+</body>
+</html> 

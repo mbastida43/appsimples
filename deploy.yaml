@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cor-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cor-app
+  template:
+    metadata:
+      labels:
+        app: cor-app
+    spec:
+      containers:
+      - name: cor-app
+        image: cor-app:latest  # Certifique-se de que esta imagem está disponível no cluster
+        ports:
+        - containerPort: 80  # Porta padrão do Nginx dentro do container
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cor-app-service
+spec:
+  selector:
+    app: cor-app
+  ports:
+    - protocol: TCP
+      port: 8080      # Porta exposta externamente pelo LoadBalancer
+      targetPort: 80  # Porta do container (padrão Nginx)
+      nodePort: 30000 # Porta mapeada no Node interno do cluster
+  type: LoadBalancer
