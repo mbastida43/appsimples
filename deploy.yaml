@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cor-app
-        image: marlonbastida\cor-app:latest  # Certifique-se de que esta imagem está disponível no cluster
+        image: marlonbastida/cor-app:latest  # Certifique-se de que esta imagem está disponível no cluster
         ports:
         - containerPort: 80  # Porta padrão do Nginx dentro do container
 
