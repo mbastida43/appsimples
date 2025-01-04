@@ -31,4 +31,4 @@ spec:
       port: 8080      # Porta exposta externamente pelo LoadBalancer
       targetPort: 80  # Porta do container (padrão Nginx)
       nodePort: 30000 # Porta mapeada no Node interno do cluster
-
+  type: NodePort
